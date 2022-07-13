@@ -38,6 +38,7 @@ fn generate_current_hash() -> FnReturnType {
 
 fn update_conformance_tests() -> FnReturnType {
     println!("Updating conformance tests");
+    println!("Cloning TypeScript repository");
 
     // Downloads the git repository of TypeScript.
     //
@@ -53,11 +54,12 @@ fn update_conformance_tests() -> FnReturnType {
     }
     let elapsed = now.elapsed();
     println!("Done! {elapsed:#?}");
-
+    println!("Fetching TypeScript current release version tag ({TARGET_VERSION})");
+    
     // Fetches all tags
     let now = Instant::now();
     let fetch_task = Command::new("git")
-        .args(&["fetch", &format!("refs/tags/{TARGET_VERSION}"), "--prune"])
+        .args(&["fetch", "origin", &format!("+refs/tags/{TARGET_VERSION}:master")])
         .current_dir("./temp/typescript")
         .status()?;
 
