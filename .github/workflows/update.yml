@@ -2,7 +2,10 @@ name: Update
 
 on:
   push:
-  schedule: 0 0 * * *
+    branches:
+      - main
+
+    schedule: 0 0 * * *
 
 jobs:
   update:
