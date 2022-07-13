@@ -46,7 +46,7 @@ fn update_conformance_tests() -> FnReturnType {
     // entire thing (including commits), `--depth 1` is added
     let now = Instant::now();
     let clone_task = Command::new("git")
-        .args(&["clone", "--depth=1", TS_REPO, "temp/typescript"])
+        .args(&["clone", TS_REPO, "temp/typescript"])
         .status()?;
 
     if !clone_task.success() {
