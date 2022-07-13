@@ -36,8 +36,5 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "noreply@github.com"
           git add -A
-          if (git diff-index --quiet HEAD --) {}
-          else {
-            git commit -m "[actions] generated conformance tests"
-            git push https://:${{ secrets.GITHUB_TOKEN }}@github.com/memothelemo-archive/ts-conformance-gen.git HEAD:master
-          }
+          git commit -m "[actions] generated conformance tests"
+          git push https://:${{ secrets.GITHUB_TOKEN }}@github.com/memothelemo-archive/ts-conformance-gen.git HEAD:master
