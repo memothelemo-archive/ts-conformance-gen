@@ -57,7 +57,7 @@ fn update_conformance_tests() -> FnReturnType {
     // Fetches all tags
     let now = Instant::now();
     let fetch_task = Command::new("git")
-        .args(&["fetch", "--all", "--tags", "--prune"])
+        .args(&["fetch", &format!("tags/{TARGET_VERSION}")])
         .current_dir("./temp/typescript")
         .status()?;
 
