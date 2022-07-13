@@ -2,10 +2,8 @@ name: Update
 
 on:
   push:
-    branches:
-      - main
-
-  schedule: 0 0 * * *
+  schedule:
+    - cron: 0 0 * * *
 
 jobs:
   update:
