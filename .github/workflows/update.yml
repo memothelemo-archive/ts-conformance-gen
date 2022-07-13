@@ -2,8 +2,6 @@ name: Update
 
 on:
   push:
-  schedule:
-    - cron: 0 0 * * *
 
 jobs:
   update:
@@ -26,6 +24,17 @@ jobs:
         with:
           command: build
           args: --release
-      
+
+      - name: Cleanup files
+        run: cargo run --release clean
+
       - name: Update
         run: cargo run --release
+
+      - name: Publish changes to GitHub
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "noreply@github.com"
+          git add .
+          git commit -m "[actions] generated conformance tests"
+          git push origin HEAD:master

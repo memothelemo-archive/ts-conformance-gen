@@ -9,7 +9,7 @@ static CONFORMANCE_DIST_PATH: &str = "conformance";
 type FnReturnType<T = ()> = Result<T, Box<dyn std::error::Error>>;
 
 fn clean() -> FnReturnType {
-    eprintln!("Cleaning temp/typescript");
+    println!("Cleaning temp/typescript");
 
     let delete_task = Command::new("rm")
         .args(&["-rvf", "temp", CONFORMANCE_DIST_PATH, CURRENT_HASH_FILE])
@@ -37,7 +37,7 @@ fn generate_current_hash() -> FnReturnType {
 }
 
 fn update_conformance_tests() -> FnReturnType {
-    eprintln!("Updating conformance tests");
+    println!("Updating conformance tests");
 
     // Downloads the git repository of TypeScript.
     //
@@ -91,7 +91,7 @@ fn update_conformance_tests() -> FnReturnType {
 }
 
 fn copy_conformance_tests() -> FnReturnType {
-    eprintln!("Copying conformance tests");
+    println!("Copying conformance tests");
     let delete_task = Command::new("cp")
         .args(&[
             "-rv",
@@ -124,9 +124,9 @@ fn main() -> FnReturnType {
         _ => update(),
     };
     if result.is_ok() {
-        eprintln!("Done!");
+        println!("Done!");
     } else {
-        eprintln!("Failed!");
+        println!("Failed!");
     }
     result
 }
