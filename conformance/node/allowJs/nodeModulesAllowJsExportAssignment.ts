@@ -1,4 +1,4 @@
-// @module: node16,nodenext
+// @module: node12,nodenext
 // @declaration: true
 // @allowJs: true
 // @checkJs: true

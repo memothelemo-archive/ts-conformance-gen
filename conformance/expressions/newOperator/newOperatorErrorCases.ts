@@ -29,7 +29,7 @@ var b = new C0 32, ''; // Parse error
 // Generic construct expression with no parentheses
 var c1 = new T;
 var c1: T<{}>;
-var c2 = new T<string>;  // Ok
+var c2 = new T<string>; // Parse error
 
 
 // Construct expression of non-void returning function

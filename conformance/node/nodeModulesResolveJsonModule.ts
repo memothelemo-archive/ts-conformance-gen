@@ -1,4 +1,4 @@
-// @module: node16,nodenext
+// @module: node12,nodenext
 // @resolveJsonModule: true
 // @outDir: ./out
 // @declaration: true

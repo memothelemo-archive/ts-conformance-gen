@@ -1,5 +1,5 @@
-// @moduleResolution: node16
-// @module: node16
+// @moduleResolution: node12
+// @module: node12
 
 // @filename: /src/bar.cts
 // Extensionless relative path cjs import in a cjs module
