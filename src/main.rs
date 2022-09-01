@@ -1,7 +1,7 @@
 use std::{env, process::Command, time::Instant};
 
 static TS_REPO: &str = "https://github.com/microsoft/TypeScript";
-static TARGET_VERSION: &str = "v4.7.4";
+static TARGET_VERSION: &str = "v4.6.2";
 
 static CURRENT_HASH_FILE: &str = "./CURRENT_HASH";
 static CONFORMANCE_DIST_PATH: &str = "conformance";
